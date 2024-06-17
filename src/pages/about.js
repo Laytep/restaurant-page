@@ -27,6 +27,11 @@ export default function about() {
 
   about.appendChild(aboutHours);
 
+  const aboutContactHeader = document.createElement("h1");
+  aboutContactHeader.className = "about__header";
+  addTextToDOM(aboutContactHeader, "Contact");
+  about.appendChild(aboutContactHeader);
+
   const aboutContact = document.createElement("div");
   aboutContact.className = "about__contact";
 
@@ -40,21 +45,4 @@ export default function about() {
   about.appendChild(aboutContact);
 
   return about;
-}
-
-{
-  /* <div class="about">
-  <h1 class="about__header">Contact</h1>
-  <div class="about__hours">
-    <p>Mon-Fri: 12:00-21:30 (order up to 21:30)</p>
-    <p>Sat: 13:00-21:30 (order up to 21:30)</p>
-    <p>Sun: 13:00-20:30 (order up to 20:30)</p>
-  </div>
-  <div class="about__contact">
-   
-    <p>Warsaw st. Chmilena 9</p>
-    <p>Tel: 888 111 542</p>
-    <p>barneyburger@barneyburger.pl</p>
-  </div>
-</div>; */
 }

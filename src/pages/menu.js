@@ -1,6 +1,14 @@
 import { MENU_ITEMS } from "../data/MENU_ITEMS";
 import addTextToDOM from "../helpers/addTextToDOM";
 
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+const images = importAll(
+  require.context("../assets/burgers/", false, /\.(png|jpe?g|svg)$/)
+);
+
 export default function menu() {
   const menu = document.createElement("div");
   menu.className = "menu";
@@ -25,8 +33,17 @@ export default function menu() {
     menuItemDescription.className = "menu__item-description";
     addTextToDOM(menuItemDescription, item.description);
 
-    menuItem.appendChild(menuItemTitle);
-    menuItem.appendChild(menuItemDescription);
+    const menuItemImg = document.createElement("img");
+    menuItemImg.className = "menu__item-image";
+    menuItemImg.src = images[item.id];
+
+    menuItem.appendChild(menuItemImg);
+
+    const menuDescritionContainer = document.createElement("div");
+    menuDescritionContainer.appendChild(menuItemTitle);
+    menuDescritionContainer.appendChild(menuItemDescription);
+    menuItem.appendChild(menuDescritionContainer);
+
     menuContainer.appendChild(menuItem);
   });
 
