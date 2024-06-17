@@ -26,8 +26,8 @@ const menuItem = menu();
 const aboutItem = about();
 
 function initPage() {
-  content.appendChild(aboutItem);
-  currentPage = "about";
+  content.appendChild(homeItem);
+  currentPage = "home";
 }
 
 initPage();
