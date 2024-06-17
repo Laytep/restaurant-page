@@ -16,10 +16,6 @@ function home() {
   const home = document.createElement("div");
   home.className = "home";
 
-  const homeLogo = document.createElement("div");
-  homeLogo.className = "home__logo";
-  home.appendChild(homeLogo);
-
   const homeInfo = document.createElement("div");
   homeInfo.className = "home__info";
 
